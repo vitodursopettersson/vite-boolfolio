@@ -17,8 +17,9 @@ export default {
 
 <template>
     <main>
-        <ProjectCard v-for="project in projects" :title="project.title" :description="project.description"
-            :technologies="project.technologies" :type="project.type" />
+        <div class="d-flex gap-4 p-4">
+            <ProjectCard v-for="project in projects" :project="project" />
+        </div>
     </main>
 </template>
 
