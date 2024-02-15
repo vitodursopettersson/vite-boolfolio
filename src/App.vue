@@ -10,7 +10,18 @@ export default {
   },
   components: {
     AppMain,
+  },
+  methods: {
+    getProjects() {
+      axios.get(this.apiUrl).then((response) => {
+        console.log(response.data);
+      });
+    }
+  },
+  created() {
+    this.getProjects();
   }
+
 }
 </script>
 
