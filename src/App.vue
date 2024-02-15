@@ -6,6 +6,7 @@ export default {
   data() {
     return {
       apiUrl: 'http://127.0.0.1:8000/api/projects',
+      projects: [],
     }
   },
   components: {
@@ -15,6 +16,7 @@ export default {
     getProjects() {
       axios.get(this.apiUrl).then((response) => {
         console.log(response.data);
+        this.projects = response.data.results.data;
       });
     }
   },
@@ -26,7 +28,7 @@ export default {
 </script>
 
 <template>
-  <AppMain />
+  <AppMain :projects="projects" />
 </template>
 
 <style scoped></style>
